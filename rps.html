@@ -4,94 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock, paper, scissors - Odin Project</title>
+    <script src="./app.js" defer> </script>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <script>
-        function computerPlay() {
-            const play = Math.floor(Math.random() * 3);
-            
-            switch (play) {
-                case 0:
-                    return 0;
-                    break;
-                case 1:
-                    return 1;
-                    break;
-                case 2:
-                    return 2;
-                    break;
-                default:
-                    break;
-            }
-        };
 
-        function gamePlay(user, computer) {
-            user = prompt('Choose rock, paper or scissors');
-            user = user.toLowerCase()
-            computer = computerPlay();
-            //console.info(computer);
-            if (user === 'rock') {
-                console.log("You chose rock.");
-                if (computer === 0) {
-                    return 0 //"The computer also chose rock. It's a draw!";
-                } else if (computer === 1) {
-                    return 2 //"The computer chose paper! You LOSE!";
-                } else if (computer === 2) {
-                    return 1 //"The computer chose scissors! You WIN!";
-                }
-            } else if (user === 'paper') {
-                console.log("You chose paper.");
-                if (computer === 0) {
-                    return 1 //"The computer chose rock. You WIN!";
-                } else if (computer === 1) {
-                    return 0 //"The computer also chose paper! It's a draw!";
-                } else if (computer === 2) {
-                    return 2 // "The computer chose scissors! You LOSE!";
-            }
-            } else if (user === 'scissors') {
-                console.log("You chose scissors.");
-                if (computer === 0) {
-                    return 2 //"The computer chose rock. You LOSE!";
-                } else if (computer === 1) {
-                    return 1 //"The computer chose paper! You WIN!!";
-                } else if (computer === 2) {
-                    return 0 //"The computer also chose scissors! It's a draw!";
-            }
-         } else {
-                return "Something's wrong - did you make a typo?";
-            }
-        
-            
-        }
+    <div class="main">
+        <div class="console">
+            <div class="banner">
+                <h1>ROCK PAPER SISSORS</h1>
+            </div>
+            <div class="game">
+                <div class="btn">
+                    <button id="rock">ROCK</button>
+                </div>
+                <div class="btn">
+                    <button id="paper">PAPER</button>
+                </div>
+                <div class="btn">
+                    <button id="scissors">SCISSORS</button>
+                </div>
+            </div>
+            <div id="result">
+                
+            </div>
+        </div>
 
-    function game() {
-        let userscore = 0;
-        let computerscore = 0;
-        for (let i = 0; i < 5; i++) {
-            let gamey = gamePlay();
-            if (gamey === 0) {
-                console.log("It's a draw!");
-            } else if (gamey === 1) {
-                userscore++;
-                console.log("You win!");
-            } else if (gamey === 2) {
-                computerscore++;
-                console.log("You lose!");
-            }
-            console.log("The current score is " + computerscore + " for the AI and " + userscore + " to you.")
-        }
-        console.log("The final score is " + computerscore + " for the AI and " + userscore + " to you.")
-        if (computerscore < userscore) {
-            console.log("You are the ouright winner!");
-        } else if (computerscore === userscore) {
-            console.log("It was a draw. You're as good as a bot.");
-        } else {
-            console.log("Sorry mang, you loost.");
-        }
-    }
+        <div class="scores">
 
-        
-    </script>
+            <div class="userscore b p t-center">
+                <div class="scoreboard">Your score</div>
+                <div id="users">0</div>
+            </div>
+
+            <div class="gamecount b p t-center">
+                <div class="scoreboard">Total</div>
+                <div id="games">0</div>
+            </div>
+
+            <div class="aiscore b p t-center">
+                <div class="scoreboard">AI's Score</div>
+                <div id="ais">0</div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
