@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function computerPlay() {
+            const play = Math.floor(Math.random() * 3);
+            
+            switch (play) {
+                case 0:
+                    return 0;
+                    break;
+                case 1:
+                    return 1;
+                    break;
+                case 2:
+                    return 2;
+                    break;
+                default:
+                    break;
+            }
+        };
+
+        function gamePlay(user, computer) {
+            user = parseInt(prompt('Type 1 for rock, 2 for paper or 3 for scissors'));
+            computer = computerPlay();
+            //console.info(computer);
+            if (user === 1) {
+                console.log("You chose rock.");
+                if (computer === 0) {
+                    console.log("The computer also chose rock. It's a draw!");
+                } else if (computer === 1) {
+                    console.log("The computer chose paper! You LOSE!");
+                } else if (computer === 2) {
+                    console.log("The computer chose scissors! You WIN!");
+                }
+            } else if (user === 2) {
+                console.log("You chose paper.");
+                if (computer === 0) {
+                    console.log("The computer chose rock. You WIN!")
+                } else if (computer === 1) {
+                    console.log("The computer also chose paper! It's a draw!");
+                } else if (computer === 2) {
+                    console.log("The computer chose scissors! You LOSE!");
+            }
+            } else if (user === 3) {
+                console.log("You chose scissors.");
+                if (computer === 0) {
+                    console.log("The computer chose rock. You LOSE!");
+                } else if (computer === 1) {
+                    console.log("The computer chose paper! You WIN!!");
+                } else if (computer === 2) {
+                    console.log("The computer also chose scissors! It's a draw!");
+            }
+         } else {
+                console.log("Something's wrong - did you type the wrong number? Remember, you must chose 1, 2 or 3.");
+            }
+        
+            
+        }
+        
+    </script>
+</body>
+</html>
