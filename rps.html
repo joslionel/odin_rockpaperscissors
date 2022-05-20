@@ -27,42 +27,70 @@
         };
 
         function gamePlay(user, computer) {
-            user = parseInt(prompt('Type 1 for rock, 2 for paper or 3 for scissors'));
+            user = prompt('Choose rock, paper or scissors');
+            user = user.toLowerCase()
             computer = computerPlay();
             //console.info(computer);
-            if (user === 1) {
+            if (user === 'rock') {
                 console.log("You chose rock.");
                 if (computer === 0) {
-                    console.log("The computer also chose rock. It's a draw!");
+                    return 0 //"The computer also chose rock. It's a draw!";
                 } else if (computer === 1) {
-                    console.log("The computer chose paper! You LOSE!");
+                    return 2 //"The computer chose paper! You LOSE!";
                 } else if (computer === 2) {
-                    console.log("The computer chose scissors! You WIN!");
+                    return 1 //"The computer chose scissors! You WIN!";
                 }
-            } else if (user === 2) {
+            } else if (user === 'paper') {
                 console.log("You chose paper.");
                 if (computer === 0) {
-                    console.log("The computer chose rock. You WIN!")
+                    return 1 //"The computer chose rock. You WIN!";
                 } else if (computer === 1) {
-                    console.log("The computer also chose paper! It's a draw!");
+                    return 0 //"The computer also chose paper! It's a draw!";
                 } else if (computer === 2) {
-                    console.log("The computer chose scissors! You LOSE!");
+                    return 2 // "The computer chose scissors! You LOSE!";
             }
-            } else if (user === 3) {
+            } else if (user === 'scissors') {
                 console.log("You chose scissors.");
                 if (computer === 0) {
-                    console.log("The computer chose rock. You LOSE!");
+                    return 2 //"The computer chose rock. You LOSE!";
                 } else if (computer === 1) {
-                    console.log("The computer chose paper! You WIN!!");
+                    return 1 //"The computer chose paper! You WIN!!";
                 } else if (computer === 2) {
-                    console.log("The computer also chose scissors! It's a draw!");
+                    return 0 //"The computer also chose scissors! It's a draw!";
             }
          } else {
-                console.log("Something's wrong - did you type the wrong number? Remember, you must chose 1, 2 or 3.");
+                return "Something's wrong - did you make a typo?";
             }
         
             
         }
+
+    function game() {
+        let userscore = 0;
+        let computerscore = 0;
+        for (let i = 0; i < 5; i++) {
+            let gamey = gamePlay();
+            if (gamey === 0) {
+                console.log("It's a draw!");
+            } else if (gamey === 1) {
+                userscore++;
+                console.log("You win!");
+            } else if (gamey === 2) {
+                computerscore++;
+                console.log("You lose!");
+            }
+            console.log("The current score is " + computerscore + " for the AI and " + userscore + " to you.")
+        }
+        console.log("The final score is " + computerscore + " for the AI and " + userscore + " to you.")
+        if (computerscore < userscore) {
+            console.log("You are the ouright winner!");
+        } else if (computerscore === userscore) {
+            console.log("It was a draw. You're as good as a bot.");
+        } else {
+            console.log("Sorry mang, you loost.");
+        }
+    }
+
         
     </script>
 </body>
