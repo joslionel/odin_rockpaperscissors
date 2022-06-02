@@ -15,10 +15,11 @@ div {
 
 .main {
     display: flex;
-    
-    flex: 1;
+    background-color:antiquewhite;
     justify-content: center;    
-    height: 500px;
+    height: 100%;
+    border: 2px solid black;
+    padding: 5em;
 }
 
 .console {
@@ -42,6 +43,7 @@ div {
     font-size: 28px;
     color: darkslategray;
     background-color: lightgray;
+    border: 3px dashed grey;
     margin-top: 20px;
     margin-bottom: 20px;
     height: 80px;
@@ -52,6 +54,10 @@ div {
     align-self: center;
     flex-direction: row;
     justify-items: center;
+    background-color: lightgray;
+    padding: 2em;
+    border: 2px dashed black;
+    border-radius: 1em;
 
 }
 
@@ -67,6 +73,13 @@ div {
 .aiscore {
     margin-left: 50px;
     
+}
+
+.gamecount,
+.aiscore,
+.userscore {
+    background-color: cadetblue;
+    font-weight: bolder;
 }
 
 .transform {
